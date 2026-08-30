@@ -19,7 +19,7 @@ public class CustomerResponse {
         CustomerResponse response = new CustomerResponse();
 
         response.setCustomerId(customer.getId().toString());
-        response.setFullName(customer.getName());
+        response.setFullName(customer.getFirstName()+" "+customer.getLastName());
         response.setPhoneNumber(customer.getPhoneNumber());
         response.setEmail(customer.getEmail());
 
