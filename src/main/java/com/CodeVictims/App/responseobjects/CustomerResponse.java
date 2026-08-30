@@ -1,6 +1,7 @@
 package com.CodeVictims.App.responseobjects;
 
 import com.CodeVictims.App.entities.Customer;
+import com.CodeVictims.App.utils.HelperUtils;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -19,7 +20,9 @@ public class CustomerResponse {
         CustomerResponse response = new CustomerResponse();
 
         response.setCustomerId(customer.getId().toString());
-        response.setFullName(customer.getFirstName()+" "+customer.getLastName());
+        response.setFullName(HelperUtils.getFullName(
+                customer.getFirstName(),
+                customer.getLastName()));
         response.setPhoneNumber(customer.getPhoneNumber());
         response.setEmail(customer.getEmail());
 
