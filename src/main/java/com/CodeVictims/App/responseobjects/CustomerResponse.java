@@ -10,10 +10,10 @@ import java.util.List;
 @Getter
 @Setter
 public class CustomerResponse {
-    String customerId;
-    String fullName;
-    String phoneNumber;
-    String email;
+    private String customerId;
+    private String fullName;
+    private String phoneNumber;
+    private String email;
 
     public static CustomerResponse convert(Customer customer){
         CustomerResponse response = new CustomerResponse();
