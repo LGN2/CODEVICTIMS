@@ -54,7 +54,20 @@ public class CustomerServices {
     }
 
     public CustomerResponse updateCustomer(UUID id, CustomerRequest request) {
+        if (id == null || request == null){
+            return null;
+        }
+        for (Customer customer : customerList){
+            if (customer.getId().equals(id)){
+                customer.setFirstName(request.getCustomerFirstName());
+                customer.setLastName(request.getCustomerLastName());
+                customer.setPhoneNumber(request.getCustomerPhoneNumber());
+                customer.setEmail(request.getCustomerEmail());
 
+                return CustomerResponse.convert(customer);
+            }
+        }
+        return null;
     }
 
     public boolean deleteCustomer(UUID id) {
