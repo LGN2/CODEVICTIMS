@@ -3,7 +3,6 @@ package com.CodeVictims.App.services;
 import com.CodeVictims.App.entities.Customer;
 import com.CodeVictims.App.requestobjects.CustomerRequest;
 import com.CodeVictims.App.responseobjects.CustomerResponse;
-import com.CodeVictims.App.utils.HelperUtils;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -39,7 +38,7 @@ public class CustomerServices {
     }
 
     public List<CustomerResponse> getAllCustomers() {
-
+        return CustomerResponse.convert(customerList);
     }
 
     public CustomerResponse getCustomerById(UUID id) {
