@@ -42,7 +42,15 @@ public class CustomerServices {
     }
 
     public CustomerResponse getCustomerById(UUID id) {
-
+        if (id == null) {
+            return null;
+        }
+        for (Customer customer : customerList){
+            if (customer.getId().equals(id)){
+                return CustomerResponse.convert(customer);
+            }
+        }
+        return null;
     }
 
     public CustomerResponse updateCustomer(UUID id, CustomerRequest request) {
