@@ -71,6 +71,11 @@ public class CustomerServices {
     }
 
     public boolean deleteCustomer(UUID id) {
-
+        if (id == null) {
+            return false;
+        }
+        return customerList.removeIf(
+                customer -> customer.getId().equals(id)
+        );
     }
 }
