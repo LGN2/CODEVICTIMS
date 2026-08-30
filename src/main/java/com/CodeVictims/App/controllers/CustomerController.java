@@ -29,4 +29,11 @@ public class CustomerController {
     public CustomerResponse getCustomerById(@PathVariable UUID id) {
         return customerServices.getCustomerById(id);
     }
+    @PutMapping("/{id}")
+    public CustomerResponse updateCustomer(
+            @PathVariable UUID id,
+            @RequestBody CustomerRequest request) {
+
+        return customerServices.updateCustomer(id, request);
+    }
 }
