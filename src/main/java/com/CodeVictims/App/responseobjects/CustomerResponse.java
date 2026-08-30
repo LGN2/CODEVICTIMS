@@ -4,6 +4,9 @@ import com.CodeVictims.App.entities.Customer;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Getter
 @Setter
 public class CustomerResponse {
@@ -21,5 +24,14 @@ public class CustomerResponse {
         response.setEmail(customer.getEmail());
 
         return response;
+    }
+
+    public static List<CustomerResponse>
+    convert(List<Customer> customerList){
+        List<CustomerResponse> responseList = new ArrayList<>();
+        for (Customer c : customerList){
+            responseList.add(convert(c));
+        }
+        return responseList;
     }
 }
