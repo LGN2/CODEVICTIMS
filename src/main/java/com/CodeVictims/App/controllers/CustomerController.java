@@ -6,6 +6,7 @@ import com.CodeVictims.App.services.CustomerServices;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("customers")
@@ -23,5 +24,9 @@ public class CustomerController {
     @GetMapping
     public List<CustomerResponse> getAllCustomers() {
         return customerServices.getAllCustomers();
+    }
+    @GetMapping("/{id}")
+    public CustomerResponse getCustomerById(@PathVariable UUID id) {
+        return customerServices.getCustomerById(id);
     }
 }
