@@ -9,8 +9,7 @@ import java.util.UUID;
 @Setter
 public class Customer {
     private UUID id;
-    private String firstName;
-    private String lastName;
+    private String name;
     private String phoneNumber;
     private String email;
 }
